@@ -1,0 +1,40 @@
+
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <h3>Response</h3>
+        <form #f = "ngForm">
+          <mz-select-container>
+            <select mz-select
+              id="options-select"
+              [label]="'Method'"
+              [placeholder]="'Select a Method to send data'"
+              name = "method" ngModel
+            >
+                <option value="GET" selected>GET</option>
+                <option value="POST">POST</option>
+                <option value="PUT">PUT</option>
+                <option value="PATCH">PATCH</option>
+                <option value="DELETE">DELETE</option>
+            </select>
+          </mz-select-container>
+          <br>
+          <label>Data</label>
+          <input type="text" name="data" [(ngModel)] = "data">
+          <br>
+          <div class="col s12 center-align">
+            <a href="javascript:void(0)" (click)="sendData(f)" class="pink waves-effect waves-light btn">Send data</a>
+          
+          </div>
+        </form>
+      <table class="highlight">
+        <tr>
+          <th>Response</th>
+          <th>Time (ms)</th>
+        </tr>
+        <tr>
+          <td>{{responseData}}</td>
+          <td>{{timeResponse}}</td>
+        </tr>
+      </table>
+    </div>
+</div>
